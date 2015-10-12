@@ -1,0 +1,24 @@
+Done:
+-added two windows, first screen is a so called splashscreen (loading screen),
+ second one is the main content of the app
+
+ToDo:
+*Backend:
+-implement login & register for user and business
+
+-implement sender for business
+
+-implement ads in loading screen
+
+-read the gps of user
+-send the gps of user
+-recieve data from server (called serv-dat) based on gps of user
+-save the profil (called profil-dat)
+-filter the serv-dat with the profil-dat
+
+*Frontend:
+-login to the app
+-show actual ads(not the one in the loading screen)
+
+*Design:
+-any kind of design is better than the one I implemented ;)
