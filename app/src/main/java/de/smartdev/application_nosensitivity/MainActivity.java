@@ -49,17 +49,15 @@ public class MainActivity extends AppCompatActivity
                 fragment = FirstFragment.newInstance(position + 1);
             }
             case 1: {
-
+                fragment = SecondFragment.newInstance(position + 1);
             }
             case 2: {
-
+                fragment = ThirdFragment.newInstance(position + 1);
             }
         }
-
-        // update the main content by replacing fragments
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
-                .replace(R.id.container, PlaceholderFragment.newInstance(position + 1))
+                .replace(R.id.container, fragment)
                 .commit();
     }
 
