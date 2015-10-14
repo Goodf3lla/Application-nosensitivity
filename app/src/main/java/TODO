@@ -1,5 +1,5 @@
 Done:
--added two windows, first screen is a so called splashscreen (loading screen),
+-added two activities, first activity is a so called splashscreen (loading screen),
  second one is the main content of the app
 
 ToDo:
@@ -10,7 +10,6 @@ ToDo:
 
 -implement ads in loading screen
 
-test test
 
 -read the gps of user
 -send the gps of user

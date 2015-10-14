@@ -5,11 +5,20 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/textView:loadingscreen"
+        android:id="@+id/textViewloadingscreen"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:text="Loadingscreen"
         android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <CheckBox
+        android:id="@+id/checkBox"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="89dp"
+        android:text="New CheckBox" />
 </RelativeLayout>
