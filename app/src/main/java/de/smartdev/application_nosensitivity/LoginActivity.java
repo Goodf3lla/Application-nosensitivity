@@ -8,10 +8,10 @@ import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 
 public class LoginActivity extends AppCompatActivity {
 
-    private static int zeit = 8000; // TODO: change from time to on sucess login
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -28,16 +28,22 @@ public class LoginActivity extends AppCompatActivity {
                         .setAction("Action", null).show();
             }
         });
-        new Handler().postDelayed(new Runnable() {
+        final Button button = (Button) findViewById(R.id.button_skip_login);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                // Perform action on click
+
+
+                //new Handler().postDelayed(new Runnable() { //comes with time we need to change after the login is entered
+                new Handler().post(new Runnable() {
             @Override
             public void run() {
                 Intent i = new Intent(LoginActivity.this, MainActivity.class);
                 startActivity(i);
                 finish();
-
             }
-        }, zeit);
-
+                });
+            }
+        });
     }
-
 }
