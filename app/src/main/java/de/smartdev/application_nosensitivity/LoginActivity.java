@@ -31,10 +31,6 @@ public class LoginActivity extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.button_skip_login);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
-                // Perform action on click
-
-
-                //new Handler().postDelayed(new Runnable() { //comes with time we need to change after the login is entered
                 new Handler().post(new Runnable() {
             @Override
             public void run() {
