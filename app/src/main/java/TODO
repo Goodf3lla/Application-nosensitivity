@@ -27,3 +27,5 @@ ToDo:
 *Gerneral:
 -Crawl Data from the foodtrucks
 -expand from food to all stores that are physically there, onlineshops are strealing the customers from the "Einzelhandel"
+
+login screen: needs to be implemented for the database connection as the mysql connector needs the database user & pw in cleartext so everyone needs an own database

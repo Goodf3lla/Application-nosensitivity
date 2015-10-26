@@ -16,7 +16,7 @@ import android.view.ViewGroup;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks, FirstFragment.OnFragmentInteractionListener,
-        SecondFragment.OnFragmentInteractionListener, ThirdFragment.OnFragmentInteractionListener {
+        SecondFragment.OnFragmentInteractionListener, ThirdFragment.OnFragmentInteractionListener, FourthFragment.OnFragmentInteractionListener {
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
@@ -48,12 +48,19 @@ public class MainActivity extends AppCompatActivity
         switch (position) {
             case 0: {
                 fragment = FirstFragment.newInstance(position + 1);
+                break;
             }
             case 1: {
                 fragment = SecondFragment.newInstance(position + 1);
+                break;
             }
             case 2: {
                 fragment = ThirdFragment.newInstance(position + 1);
+                break;
+            }
+            case 3: {
+                fragment = FourthFragment.newInstance(position + 1);
+                break;
             }
         }
         FragmentManager fragmentManager = getSupportFragmentManager();
@@ -73,6 +80,8 @@ public class MainActivity extends AppCompatActivity
             case 3:
                 mTitle = getString(R.string.title_section3);
                 break;
+            case 4:
+                mTitle = getString(R.string.title_section4);
         }
     }
 
