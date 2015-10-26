@@ -28,4 +28,8 @@ ToDo:
 -Crawl Data from the foodtrucks
 -expand from food to all stores that are physically there, onlineshops are strealing the customers from the "Einzelhandel"
 
-Analytics: https://developers.google.com/analytics/devguides/collection/android/v4/
+TODO: Analytics: https://developers.google.com/analytics/devguides/collection/android/v4/
+
+TODO: Location: http://developer.android.com/guide/topics/location/strategies.html
+
+TODO: best practice for settings http://viralpatel.net/blogs/android-preferences-activity-example/

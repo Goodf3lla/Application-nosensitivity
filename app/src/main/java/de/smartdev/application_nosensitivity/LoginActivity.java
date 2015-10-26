@@ -32,14 +32,41 @@ public class LoginActivity extends AppCompatActivity {
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
                 new Handler().post(new Runnable() {
-            @Override
-            public void run() {
-                Intent i = new Intent(LoginActivity.this, MainActivity.class);
-                startActivity(i);
-                finish();
-            }
+                    @Override
+                    public void run() {
+                        Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
                 });
             }
         });
+        final Button button1 = (Button) findViewById(R.id.btnSignUp);
+        button1.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i = new Intent(LoginActivity.this, SignUpActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                });
+            }
+        });
+        final Button button2 = (Button) findViewById(R.id.btnSingIn);
+        button2.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i = new Intent(LoginActivity.this, SignInActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                });
+            }
+        });
+
     }
 }
