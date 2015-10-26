@@ -1,4 +1,4 @@
-package de.smartdev.application_nosensitivity;
+package de.smartdev.application_nosensitivity.backend;
 
 import android.app.ProgressDialog;
 import android.content.Context;

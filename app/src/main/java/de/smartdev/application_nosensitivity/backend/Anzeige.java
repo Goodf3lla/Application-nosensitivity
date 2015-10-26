@@ -1,4 +1,4 @@
-package de.smartdev.application_nosensitivity;
+package de.smartdev.application_nosensitivity.backend;
 
 /**
  * Created by Andi on 26.10.2015.
