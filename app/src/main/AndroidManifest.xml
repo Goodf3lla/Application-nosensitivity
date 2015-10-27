@@ -20,7 +20,7 @@
             </intent-filter>
         </activity>
         <activity
-            android:name=".LoginActivity"
+            android:name=".login.LoginActivity"
             android:label="@string/title_activity_login"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
@@ -35,10 +35,9 @@
                 <action android:name="android.intent.action.MAIN" />
                 <!-- category android:name="android.intent.category.LAUNCHER" /> -->
             </intent-filter>
-
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="de.smartdev.application_nosensitivity.LoginActivity" />
+                android:value=".login.LoginActivity" />
         </activity>
         <activity
             android:name=".SettingsActivity"
@@ -49,13 +48,22 @@
                 android:value="de.smartdev.application_nosensitivity.MainActivity" />
         </activity>
         <activity
-            android:name=".SignInActivity"
+            android:name=".login.SignInActivity"
             android:label="@string/title_activity_sign_in"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SignInActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
         <activity
-            android:name=".SignUpActivity"
+            android:name=".login.SignUpActivity"
             android:label="@string/title_activity_sign_up"
             android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.SignUpActivity" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
         </activity>
     </application>
 

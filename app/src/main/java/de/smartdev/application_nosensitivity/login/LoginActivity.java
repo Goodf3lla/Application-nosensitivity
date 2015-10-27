@@ -1,4 +1,4 @@
-package de.smartdev.application_nosensitivity;
+package de.smartdev.application_nosensitivity.login;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -9,6 +9,9 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+
+import de.smartdev.application_nosensitivity.MainActivity;
+import de.smartdev.application_nosensitivity.R;
 
 public class LoginActivity extends AppCompatActivity {
 

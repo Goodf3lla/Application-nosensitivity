@@ -5,11 +5,13 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 
+import de.smartdev.application_nosensitivity.login.LoginActivity;
+
 /**
  * Created by Andi on 27.09.2015.
  */
 public class Splash extends Activity {
-    private static int zeit = 4000;
+    private static int zeit = 1000;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
