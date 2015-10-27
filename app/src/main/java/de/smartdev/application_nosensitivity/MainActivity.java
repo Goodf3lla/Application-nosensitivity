@@ -1,8 +1,10 @@
 package de.smartdev.application_nosensitivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.widget.DrawerLayout;
@@ -13,15 +15,18 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Toast;
+
+import de.smartdev.application_nosensitivity.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks, FirstFragment.OnFragmentInteractionListener,
         SecondFragment.OnFragmentInteractionListener, ThirdFragment.OnFragmentInteractionListener, FourthFragment.OnFragmentInteractionListener {
+    public boolean is_signed_in;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
      */
     private NavigationDrawerFragment mNavigationDrawerFragment;
-
     /**
      * Used to store the last screen title. For use in {@link #restoreActionBar()}.
      */
@@ -40,29 +45,63 @@ public class MainActivity extends AppCompatActivity
         mNavigationDrawerFragment.setUp(
                 R.id.navigation_drawer,
                 (DrawerLayout) findViewById(R.id.drawer_layout));
+        Intent intent = getIntent();
+        String message = intent.getStringExtra("message");
+        is_signed_in = intent.getBooleanExtra("is_signed_in", false);
+        Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
+        toast.show();
+
     }
 
     @Override
     public void onNavigationDrawerItemSelected(int position) {
         Fragment fragment = null;
-        switch (position) {
-            case 0: {
-                fragment = FirstFragment.newInstance(position + 1);
-                break;
+        if (is_signed_in) {
+            switch (position) {
+                case 0: {
+                    fragment = FirstFragment.newInstance(position + 1);
+                    break;
+                }
+                case 1: {
+                    fragment = SecondFragment.newInstance(position + 1);
+                    break;
+                }
+                case 2: {
+                    fragment = ThirdFragment.newInstance(position + 1);
+                    break;
+                }
+                case 3: {
+                    fragment = FourthFragment.newInstance(position + 1);
+                    break;
+                }
             }
-            case 1: {
-                fragment = SecondFragment.newInstance(position + 1);
-                break;
-            }
-            case 2: {
-                fragment = ThirdFragment.newInstance(position + 1);
-                break;
-            }
-            case 3: {
-                fragment = FourthFragment.newInstance(position + 1);
-                break;
+        } else {
+            switch (position) {
+                case 0: {
+                    fragment = FirstFragment.newInstance(position + 1);
+                    break;
+                }
+                case 1: {
+                    new Handler().post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                            startActivity(i);
+                            finish();
+                        }
+                    });
+                }
+                case 2: {
+                    fragment = ThirdFragment.newInstance(position + 1);
+                    break;
+                }
+                case 3: {
+                    fragment = FourthFragment.newInstance(position + 1);
+                    break;
+                }
             }
         }
+
         FragmentManager fragmentManager = getSupportFragmentManager();
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)

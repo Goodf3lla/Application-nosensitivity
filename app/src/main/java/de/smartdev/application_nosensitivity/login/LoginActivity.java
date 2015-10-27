@@ -38,6 +38,8 @@ public class LoginActivity extends AppCompatActivity {
                     @Override
                     public void run() {
                         Intent i = new Intent(LoginActivity.this, MainActivity.class);
+                        i.putExtra("message", "skipped login");
+                        i.putExtra("is_signed_in", false);
                         startActivity(i);
                         finish();
                     }
