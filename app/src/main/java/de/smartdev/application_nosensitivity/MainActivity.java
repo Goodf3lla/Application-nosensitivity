@@ -21,7 +21,7 @@ import de.smartdev.application_nosensitivity.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationDrawerFragment.NavigationDrawerCallbacks, FirstFragment.OnFragmentInteractionListener,
-        SecondFragment.OnFragmentInteractionListener, ThirdFragment.OnFragmentInteractionListener, FourthFragment.OnFragmentInteractionListener {
+        SecondFragment.OnFragmentInteractionListener, ThirdFragment.OnFragmentInteractionListener, FourthFragment.OnFragmentInteractionListener, LoginFragment.OnFragmentInteractionListener {
     public boolean is_signed_in;
     /**
      * Fragment managing the behaviors, interactions and presentation of the navigation drawer.
@@ -50,6 +50,19 @@ public class MainActivity extends AppCompatActivity
         is_signed_in = intent.getBooleanExtra("is_signed_in", false);
         Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
         toast.show();
+        /*final Button button = (Button) findViewById(R.id.button_fragment_login);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                new Handler().post(new Runnable() {
+                    @Override
+                    public void run() {
+                        Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                        startActivity(i);
+                        finish();
+                    }
+                });
+            }
+        });*/
 
     }
 
@@ -82,14 +95,8 @@ public class MainActivity extends AppCompatActivity
                     break;
                 }
                 case 1: {
-                    new Handler().post(new Runnable() {
-                        @Override
-                        public void run() {
-                            Intent i = new Intent(MainActivity.this, LoginActivity.class);
-                            startActivity(i);
-                            finish();
-                        }
-                    });
+                    fragment = LoginFragment.newInstance(position + 1);
+                    break;
                 }
                 case 2: {
                     fragment = ThirdFragment.newInstance(position + 1);
@@ -106,6 +113,17 @@ public class MainActivity extends AppCompatActivity
         fragmentManager.beginTransaction()
                 .replace(R.id.container, fragment)
                 .commit();
+    }
+
+    public void gotoLoginActivity(View view) {
+        new Handler().post(new Runnable() {
+            @Override
+            public void run() {
+                Intent i = new Intent(MainActivity.this, LoginActivity.class);
+                startActivity(i);
+                finish();
+            }
+        });
     }
 
     public void onSectionAttached(int number) {

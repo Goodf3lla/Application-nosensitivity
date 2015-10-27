@@ -82,4 +82,7 @@
     <string name="title_activity_login">LoginActivity</string>
     <string name="title_activity_sign_in">SignInActivity</string>
     <string name="title_activity_sign_up">SignUpActivity</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="login_fragment">Um diese Funktion nutzen zu können, müssen Sie sich erst registrieren bzw. einloggen.</string>
 </resources>
