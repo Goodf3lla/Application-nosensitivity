@@ -9,6 +9,7 @@ public class Anzeige {
     public String tags;
     public String adresse;
     public int lifetime;
+    private int id;
 
     public int getLifetime() {
         return lifetime;
@@ -41,6 +42,5 @@ public class Anzeige {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
-    //private int id;  wird spaeter benoetigt um anzeigen zu identifizieren
 }
 

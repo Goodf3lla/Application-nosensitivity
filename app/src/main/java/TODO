@@ -10,7 +10,6 @@ ToDo:
 
 -implement ads in loading screen
 
-
 -read the gps of user
 -send the gps of user
 -recieve data from server (called serv-dat) based on gps of user
@@ -35,4 +34,11 @@ TODO: Location: http://developer.android.com/guide/topics/location/strategies.ht
 TODO: best practice for settings http://viralpatel.net/blogs/android-preferences-activity-example/
 
 DONE: Zurückbutton abfangen best practice http://www.askingbox.de/frage/android-zurueck-button-abfangen
-login done
+
+TODO: styles http://www.worldbestlearningcenter.com/tips/How-to-add-border-on-Android-TextView.htm
+ in drawable/outline_box probiert aber funktioniert komischerweise nicht
+
+ DB-Connection:
+ sigin-in und sign-up screen jeweils entweder onClick(xml) oder mit onClickListener(activity) die daten bei button klick auslesen und in db speichern wenn ungleich null (profiltabelle)
+ anzeigentabelle: unique id, text varchar, adresse varchar, TimeToLife int/timestamp, ....?
+ marked_anzeigentabelle: speichert nur die vom benutzer angeklickten tabellen also ebenfalls die gleiche attribute wie anzeigentabelle
