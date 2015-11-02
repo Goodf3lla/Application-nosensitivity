@@ -11,6 +11,9 @@ import de.smartdev.application_nosensitivity.MainActivity;
 import de.smartdev.application_nosensitivity.R;
 
 public class SignUpActivity extends AppCompatActivity {
+    private String email;
+    private String username;
+    private String password;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

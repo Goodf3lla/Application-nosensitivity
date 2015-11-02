@@ -50,20 +50,6 @@ public class MainActivity extends AppCompatActivity
         is_signed_in = intent.getBooleanExtra("is_signed_in", false);
         Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
         toast.show();
-        /*final Button button = (Button) findViewById(R.id.button_fragment_login);
-        button.setOnClickListener(new View.OnClickListener() {
-            public void onClick(View v) {
-                new Handler().post(new Runnable() {
-                    @Override
-                    public void run() {
-                        Intent i = new Intent(MainActivity.this, LoginActivity.class);
-                        startActivity(i);
-                        finish();
-                    }
-                });
-            }
-        });*/
-
     }
 
     @Override

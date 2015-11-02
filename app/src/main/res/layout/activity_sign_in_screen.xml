@@ -18,7 +18,7 @@
         android:padding="10dp">
 
         <EditText
-            android:id="@+id/etUserName"
+            android:id="@+id/etUserName_si"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:background="@drawable/edittext_top_bg"
@@ -28,7 +28,7 @@
         <!--
           android:drawableLeft="@drawable/email"/>-->
         <EditText
-            android:id="@+id/etPass"
+            android:id="@+id/etPass_si"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="-2dp"
