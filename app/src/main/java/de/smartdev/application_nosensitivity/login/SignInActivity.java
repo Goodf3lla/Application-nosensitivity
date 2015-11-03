@@ -26,17 +26,17 @@ public class SignInActivity extends AppCompatActivity {
         final Button button = (Button) findViewById(R.id.button_Sign_In);
         button.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                EditText mEdit_user = (EditText) findViewById(R.id.etUserName_si);
+                username = mEdit_user.getText().toString();
+                EditText mEdit_pass = (EditText) findViewById(R.id.etPass_si);
+                password = mEdit_pass.getText().toString();
+                if (verify.checkSign_in(username, password) == false) {
+                    Toast toast = Toast.makeText(context, "something failed while signing in", Toast.LENGTH_LONG);
+                    toast.show();
+                } else {
                 new Handler().post(new Runnable() {
                     @Override
-                    public void run() {
-                        EditText mEdit_user = (EditText) findViewById(R.id.etUserName_si);
-                        username = mEdit_user.getText().toString();
-                        EditText mEdit_pass = (EditText) findViewById(R.id.etPass_si);
-                        password = mEdit_pass.getText().toString();
-                        if (verify.checkSign_in(username, password) == false) {
-                            Toast toast = Toast.makeText(context, "something failed", Toast.LENGTH_LONG);
-                            toast.show();
-                        } else {
+                    public void run() {//TODO: safe data in DB
                            /* mEdit_user.getText().clear();
                             mEdit_pass.getText().clear();  */
                             Intent intent = new Intent(SignInActivity.this, MainActivity.class);
@@ -45,8 +45,8 @@ public class SignInActivity extends AppCompatActivity {
                             startActivity(intent);
                             finish();
                         }
-                    }
                 });
+                }
             }
         });
     }
