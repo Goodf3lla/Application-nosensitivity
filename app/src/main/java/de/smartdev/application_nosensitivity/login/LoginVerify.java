@@ -16,13 +16,22 @@ public class LoginVerify {
     }
 
     public boolean isLegalPassword(String pass) {
-
         for (int i = 0; i < passwordRegexes.length; i++) {
-            if (!passwordRegexes[i].matcher(pass).matches())
+            if (!passwordRegexes[i].matcher(pass).matches()) {
                 return false;
+            }
         }
         return true;
     }
+
+    public boolean isLegalUsername(String user) {
+        return true;
+    }
+
+    public boolean isLegalEmailaccount(String email) {
+        return email.contains("@");
+    }
+
     public boolean checkSign_in(String username, String password) {
         if (username.equals("")) {
             return false;
@@ -31,9 +40,11 @@ public class LoginVerify {
     }
 
     public boolean checkSign_up(String email, String username, String password) {
-        if (email.equals("") || username.equals("") || password.equals("")) {
+        if (!isLegalPassword(password)) {
             return false;
-        } else return isLegalPassword(password);
+        } else if (!isLegalEmailaccount(email)) {
+            return false;
+        } else return isLegalUsername(username);
     }
 
 }

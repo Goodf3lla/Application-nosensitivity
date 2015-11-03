@@ -7,6 +7,7 @@ import android.os.Handler;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.Button;
+import android.widget.CheckBox;
 import android.widget.EditText;
 import android.widget.Toast;
 
@@ -18,6 +19,7 @@ public class SignUpActivity extends AppCompatActivity {
     private String email;
     private String username;
     private String password;
+    private boolean isBusinessUser;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -33,9 +35,20 @@ public class SignUpActivity extends AppCompatActivity {
                 username = mEdit_user.getText().toString();
                 EditText mEdit_pass = (EditText) findViewById(R.id.etPass_su);
                 password = mEdit_pass.getText().toString();
-                if (verify.checkSign_up(email, username, password) == false) {
+                CheckBox mEdit_business = (CheckBox) findViewById(R.id.checkBusinessUser);
+                isBusinessUser = mEdit_business.isChecked();
+                if (!(verify.checkSign_up(email, username, password))) {
                     Toast toast = Toast.makeText(context, "something failed while signing up", Toast.LENGTH_LONG);
                     toast.show();
+                } else if (isBusinessUser) {
+                    new Handler().post(new Runnable() {
+                        @Override
+                        public void run() {
+                            Intent i = new Intent(SignUpActivity.this, RegisterBusiness.class);      //TODO: fill
+                            startActivity(i);
+                            finish();
+                        }
+                    });
                 } else {//TODO: safe data in DB
                     new Handler().post(new Runnable() {
                         @Override
