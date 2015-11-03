@@ -44,8 +44,8 @@ public class SignUpActivity extends AppCompatActivity {
                     new Handler().post(new Runnable() {
                         @Override
                         public void run() {
-                            Intent i = new Intent(SignUpActivity.this, RegisterBusiness.class);      //TODO: fill
-                            startActivity(i);
+                            Intent intentt = new Intent(SignUpActivity.this, RegisterBusiness.class);
+                            startActivity(intentt);
                             finish();
                         }
                     });
