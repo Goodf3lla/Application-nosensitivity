@@ -15,24 +15,25 @@ public class LoginVerify {
         passwordRegexes[3] = Pattern.compile(".*[~!].*");
     }
 
-    public boolean isLegalPassword(String pass) {
+    private boolean isLegalPassword(String pass) {
+        int counter = 0;
         for (int i = 0; i < passwordRegexes.length; i++) {
-            if (!passwordRegexes[i].matcher(pass).matches()) {
-                return false;
+            if (passwordRegexes[i].matcher(pass).matches()) {
+                counter++;
             }
         }
+        return counter > 2;
+    }
+
+    private boolean isLegalUsername(String user) {
         return true;
     }
 
-    public boolean isLegalUsername(String user) {
-        return true;
-    }
-
-    public boolean isLegalEmailaccount(String email) {
+    private boolean isLegalEmailaccount(String email) {
         return email.contains("@");
     }
 
-    public boolean checkSign_in(String username, String password) {
+    public boolean checkSign_in(String username, String password) {//TODO: change to http-get-request
         if (username.equals("")) {
             return false;
         }

@@ -28,7 +28,6 @@ public class RegisterBusiness extends AppCompatActivity {
                 finish();
             }
         });
-
     }
 
 }
