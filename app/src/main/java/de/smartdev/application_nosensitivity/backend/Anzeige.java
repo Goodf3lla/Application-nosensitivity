@@ -1,30 +1,31 @@
 package de.smartdev.application_nosensitivity.backend;
 
+
 /**
- * Created by Andi on 26.10.2015.
+ * Created by lukas on 10.11.15.
  */
 public class Anzeige {
 
-    public String anzeigentxt;
-    public String tags;
-    public String adresse;
-    public int lifetime;
-    private int id;
+    private String anzeigenText;
+    private String tags;
+    private String adresse;
+    private int lifetime;
+    private long userAnzeigeId;
+    private long id;
 
-    public int getLifetime() {
-        return lifetime;
-    }
 
-    public void setLifetime(int lifetime) {
-        this.lifetime = lifetime;
-    }
+    public long getId() { return  id;}
+
+    public void setId(long id) { this.id = id;}
+
+
 
     public String getAnzeigentxt() {
-        return anzeigentxt;
+        return anzeigenText;
     }
 
     public void setAnzeigentxt(String anzeigentxt) {
-        this.anzeigentxt = anzeigentxt;
+        this.anzeigenText = anzeigentxt;
     }
 
     public String getTags() {
@@ -35,6 +36,14 @@ public class Anzeige {
         this.tags = tags;
     }
 
+    public int getLifetime() {
+        return lifetime;
+    }
+
+    public void setLifetime(int lifetime) {
+        this.lifetime = lifetime;
+    }
+
     public String getAdresse() {
         return adresse;
     }
@@ -42,5 +51,10 @@ public class Anzeige {
     public void setAdresse(String adresse) {
         this.adresse = adresse;
     }
-}
 
+    public long getUserAnzeigeId(){return userAnzeigeId; }
+
+    public void setUserAnzeigeId(long id_u){this.userAnzeigeId = id_u;}
+
+
+}
