@@ -27,8 +27,8 @@ public class ThirdFragment extends Fragment {
         // Required empty public constructor
     }
 
-    public static SecondFragment newInstance(int sectionNumber) {
-        SecondFragment fragment = new SecondFragment();
+    public static ThirdFragment newInstance(int sectionNumber) {
+        ThirdFragment fragment = new ThirdFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
