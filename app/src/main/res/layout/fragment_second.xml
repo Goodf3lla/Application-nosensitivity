@@ -1,13 +1,151 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context="de.smartdev.application_nosensitivity.SecondFragment">
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment_2" />
+    <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
 
-</FrameLayout>
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="wrap_content"
+            android:layout_height="130dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="86dp"
+            android:background="@drawable/outline_box_black"
+            android:hint="Anzeigentext hier eingeben." />
+
+        <TextView
+            android:id="@+id/textView4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="40dp"
+            android:text="1. Texteingabe"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textView5"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editText"
+            android:layout_marginTop="10dp"
+            android:text="2. Adresseingabe"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <EditText
+            android:id="@+id/editText2"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:layout_marginTop="260dp"
+            android:background="@drawable/outline_box_black"
+            android:hint="Adresse hier eingeben." />
+
+        <RelativeLayout
+
+            android:id="@+id/tag_sektion"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/editText2"
+            android:layout_marginBottom="50dp">
+
+            <TextView
+
+                android:id="@+id/tag_überschrift"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:text="Tags"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <TextView
+                android:id="@+id/gewählte_tags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentRight="true"
+                android:layout_alignParentTop="true"
+                android:text="gewählte Tags"
+                android:textAppearance="?android:attr/textAppearanceLarge" />
+
+            <Button
+                android:id="@+id/wählen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/löschen"
+                android:layout_alignStart="@+id/löschen"
+                android:layout_below="@+id/gewählte_tags"
+                android:text="wählen" />
+
+            <Button
+                android:id="@+id/löschen"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/wählen"
+                android:layout_centerHorizontal="true"
+                android:text="löschen" />
+
+            <ListView
+                android:id="@+id/alle_tags_Liste"
+                android:layout_width="wrap_content"
+                android:layout_height="170dp"
+                android:layout_alignParentLeft="true"
+                android:layout_alignParentStart="true"
+                android:layout_alignTop="@+id/wählen"
+                android:layout_marginRight="10dp"
+                android:layout_toLeftOf="@+id/wählen"
+                android:background="@drawable/outline_box_black" />
+
+            <ListView
+                android:id="@+id/ausgewaehlte_tag_liste"
+                android:layout_width="wrap_content"
+                android:layout_height="170dp"
+                android:layout_below="@+id/gewählte_tags"
+                android:layout_marginLeft="10dp"
+                android:layout_toEndOf="@+id/wählen"
+                android:layout_toRightOf="@+id/wählen"
+                android:background="@drawable/outline_box_black" />
+
+        </RelativeLayout>
+
+        <Button
+            android:id="@+id/Anzeige_abschicken"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="bottom"
+            android:text="abschicken" />
+
+        <TextView
+            android:id="@+id/textView3"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Anzeigenerstellung:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+
+    </RelativeLayout>
+</ScrollView>
