@@ -8,85 +8,100 @@
         android:layout_height="fill_parent"
         android:orientation="vertical">
 
+        <TextView
+            android:id="@+id/textView_überschrift"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true"
+            android:text="Anzeigenerstellung:"
+            android:textAppearance="?android:attr/textAppearanceLarge" />
+
+        <TextView
+            android:id="@+id/textView_Texteingabe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView_überschrift"
+            android:layout_marginTop="40dp"
+            android:padding="10dp"
+            android:text="1. Texteingabe"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
-            android:id="@+id/editText"
+            android:id="@+id/edit_Anzeigentext"
             android:layout_width="wrap_content"
             android:layout_height="130dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="86dp"
+            android:layout_below="@+id/textView_Texteingabe"
+            android:layout_marginTop="0dp"
             android:background="@drawable/outline_box_black"
-            android:hint="Anzeigentext hier eingeben." />
+            android:hint="Anzeigentext hier eingeben."
+            android:padding="5dp" />
 
         <TextView
-            android:id="@+id/textView4"
+            android:id="@+id/textView_Adresseingabe"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="40dp"
-            android:text="1. Texteingabe"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
-
-        <TextView
-            android:id="@+id/textView5"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_below="@+id/editText"
-            android:layout_marginTop="10dp"
+            android:layout_below="@+id/edit_Anzeigentext"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
             android:text="2. Adresseingabe"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
-            android:id="@+id/editText2"
+            android:id="@+id/editText_Adresseingabe"
             android:layout_width="wrap_content"
             android:layout_height="30dp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentLeft="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
-            android:layout_alignParentTop="true"
-            android:layout_marginTop="260dp"
+            android:layout_below="@+id/textView_Adresseingabe"
+            android:layout_marginTop="0dp"
             android:background="@drawable/outline_box_black"
-            android:hint="Adresse hier eingeben." />
+            android:hint="Adresse hier eingeben."
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/tag_topic"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/editText_Adresseingabe"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="3. Tags"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <RelativeLayout
-
             android:id="@+id/tag_sektion"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent"
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
-            android:layout_below="@+id/editText2"
+            android:layout_below="@+id/tag_topic"
             android:layout_marginBottom="50dp">
 
             <TextView
-
-                android:id="@+id/tag_überschrift"
+                android:id="@+id/tag_available"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
-                android:text="Tags"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:text="Tags" />
 
             <TextView
                 android:id="@+id/gewählte_tags"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentEnd="true"
-                android:layout_alignParentRight="true"
+                android:layout_alignLeft="@+id/ausgewaehlte_tag_liste"
                 android:layout_alignParentTop="true"
-                android:text="gewählte Tags"
-                android:textAppearance="?android:attr/textAppearanceLarge" />
+                android:layout_alignStart="@+id/ausgewaehlte_tag_liste"
+                android:text="gewählte Tags" />
 
             <Button
                 android:id="@+id/wählen"
@@ -125,7 +140,6 @@
                 android:layout_toEndOf="@+id/wählen"
                 android:layout_toRightOf="@+id/wählen"
                 android:background="@drawable/outline_box_black" />
-
         </RelativeLayout>
 
         <Button
@@ -136,15 +150,6 @@
             android:layout_centerHorizontal="true"
             android:gravity="bottom"
             android:text="abschicken" />
-
-        <TextView
-            android:id="@+id/textView3"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentTop="true"
-            android:layout_centerHorizontal="true"
-            android:text="Anzeigenerstellung:"
-            android:textAppearance="?android:attr/textAppearanceLarge" />
 
 
     </RelativeLayout>
