@@ -92,6 +92,7 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_alignParentTop="true"
+                android:padding="2dp"
                 android:text="Tags" />
 
             <TextView
@@ -101,6 +102,7 @@
                 android:layout_alignLeft="@+id/ausgewaehlte_tag_liste"
                 android:layout_alignParentTop="true"
                 android:layout_alignStart="@+id/ausgewaehlte_tag_liste"
+                android:padding="2dp"
                 android:text="gewählte Tags" />
 
             <Button

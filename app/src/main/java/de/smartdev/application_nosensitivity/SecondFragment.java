@@ -7,6 +7,8 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.EditText;
 
 
 /**
@@ -20,6 +22,8 @@ import android.view.ViewGroup;
 public class SecondFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "sectionNumber";
     public int mParam1;
+    String Anzeigentext;
+    String Anzeigenadresse;
     private OnFragmentInteractionListener mListener;
 
 
@@ -47,9 +51,25 @@ public class SecondFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_second, container, false);
+        final View view = inflater.inflate(R.layout.fragment_second, container, false);
+        final Button button = (Button) view.findViewById(R.id.Anzeige_abschicken);
+        button.setOnClickListener(new View.OnClickListener() {
+            public void onClick(View v) {
+                //Auslesen des Anzeigentextes
+                EditText mEdit_anzeigentext = (EditText) view.findViewById(R.id.edit_Anzeigentext);
+                Anzeigentext = mEdit_anzeigentext.getText().toString();
+                //Auslesen der Adresse
+                EditText mEdit_anzeigenadresse = (EditText) view.findViewById(R.id.editText_Adresseingabe);
+                Anzeigenadresse = mEdit_anzeigenadresse.getText().toString();
+                mEdit_anzeigentext.getText().clear();
+                mEdit_anzeigenadresse.getText().clear();
+            }
+        });
+
+
+        return view;
     }
+
 
     // TODO: Rename method, update argument and hook method into UI event
     public void onButtonPressed(Uri uri) {
