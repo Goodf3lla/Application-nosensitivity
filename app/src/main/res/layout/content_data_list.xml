@@ -12,7 +12,8 @@
     tools:context="de.smartdev.application_nosensitivity.backend.DataListActivity"
     tools:showIn="@layout/activity_data_list">
 
-    <ListView
+
+<ListView
         android:id="@+id/listView_anzeigenList"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

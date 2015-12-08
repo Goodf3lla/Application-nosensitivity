@@ -5,9 +5,6 @@ import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 
 
-/**
- * Created by Andi on 17.11.2015.
- */
 public class DatabaseControler {
 
 
@@ -22,6 +19,7 @@ public class DatabaseControler {
 
         userHelper.addAnzeige(id, text, tags, adresse, lifetime, userId, db);
         userHelper.close();
+
     }
 
 

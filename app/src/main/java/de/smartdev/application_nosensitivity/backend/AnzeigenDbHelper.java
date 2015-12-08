@@ -72,6 +72,7 @@ public class AnzeigenDbHelper extends SQLiteOpenHelper {
         cursor = db.query(Anzeigen.AnzeigeInfo.TABLE_NAME, listOfAnzeigen, null, null, null, null, null);
 
         Log.e("DATABASE OPERATION", "get Anzeigen after");
+
         return cursor;
     }
 

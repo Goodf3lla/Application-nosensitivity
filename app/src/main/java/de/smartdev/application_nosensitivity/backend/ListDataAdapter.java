@@ -30,7 +30,6 @@ public class ListDataAdapter extends ArrayAdapter {
         super.add(object);
         list.add(object);
     }
-
     @Override
     public int getCount() {
         return list.size();

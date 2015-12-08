@@ -39,7 +39,6 @@ public class DataListActivity extends AppCompatActivity {
         if (cursor.moveToFirst()) {
 
             do {
-
                 String id, text, tags, adresse, lifetime, userId;
                 id = cursor.getString(0);
                 text = cursor.getString(1);

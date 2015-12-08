@@ -24,6 +24,7 @@ import java.util.List;
  * Created by Andi on 26.10.2015.
  */
 public class RecieverTask {
+
  /*
     public List<AnzeigeEntry> liste123 = new ArrayList<>();
     public String filter;

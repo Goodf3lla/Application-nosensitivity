@@ -6,6 +6,7 @@ package de.smartdev.application_nosensitivity.backend;
 public class Anzeigen {
 
     public static abstract class AnzeigeInfo {
+
         public static final String ANZEIGE_ID = "anzeige_id";
         public static final String ANZEIGE_TEXT = "anzeige_text";
         public static final String ANZEIGE_TAGS = "anzeige_tags";
