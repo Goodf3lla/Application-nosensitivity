@@ -23,8 +23,9 @@ import java.util.List;
 /**
  * Created by Andi on 26.10.2015.
  */
-public class RecieverTask extends AsyncTask<String[], Void, Boolean> {
-    public List<Anzeige> liste123 = new ArrayList<>();
+public class RecieverTask {
+ /*
+    public List<AnzeigeEntry> liste123 = new ArrayList<>();
     public String filter;
     List<Message> titles;
     List<ResultEntry> entries = Lists.newArrayList();
@@ -65,7 +66,7 @@ public class RecieverTask extends AsyncTask<String[], Void, Boolean> {
            /* AnzeigenServiceImpl anzeigenService = new AnzeigenServiceImpl();
             konsumentListeInfoTexte = anzeigenService.fetchAnzeigentxt(liste123);
             konsumentListView = (ListView) activity.findViewById(R.id.konsument_list_view);
-            konsumentArrayAdapter = new ArrayAdapter<String>(activity, R.layout.info_layout, R.id.info_item, konsumentListeInfoTexte); */
+            konsumentArrayAdapter = new ArrayAdapter<String>(activity, R.layout.info_layout, R.id.info_item, konsumentListeInfoTexte);
             konsumentListView.setAdapter(konsumentArrayAdapter);
             Toast.makeText(context, "OK", Toast.LENGTH_LONG).show();
 
@@ -83,14 +84,14 @@ public class RecieverTask extends AsyncTask<String[], Void, Boolean> {
             Log.i("---Select-push :", "start Select-Query");
             int i = 0;
             while (resultSet.next()) {
-                Anzeige anzeige = new Anzeige();
+                AnzeigeEntry anzeige = new AnzeigeEntry();
                 now.adresseProperty = resultSet.getString("Adresse");
                 now.anzeigentextProperty = resultSet.getString("Anzeigentext");
                 now.tagsProperty = resultSet.getString("Tags");
                 now.timetolifeProperty = resultSet.getInt("TimeToLife");
                 try {
                     entries.add(now);
-                    anzeige.setAnzeigentxt(entries.get(i).anzeigentextProperty);
+                    anzeige.setAnzeigenText(entries.get(i).anzeigentextProperty);
                     anzeige.setAdresse(entries.get(i).adresseProperty);
                     anzeige.setTags(entries.get(i).tagsProperty);
                     anzeige.setLifetime(entries.get(i).timetolifeProperty);
@@ -147,4 +148,6 @@ public class RecieverTask extends AsyncTask<String[], Void, Boolean> {
         public int timetolifeProperty;
         public int idProperty;
     }
+*/
+
 }

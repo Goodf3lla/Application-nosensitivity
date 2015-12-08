@@ -86,4 +86,5 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="login_fragment">Um diese Funktion nutzen zu können, müssen Sie sich erst registrieren bzw. einloggen.</string>
     <string name="title_activity_registerbusiness">Registerbusiness</string>
+    <string name="title_activity_data_list">DataListActivity</string>
 </resources>
