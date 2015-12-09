@@ -9,7 +9,7 @@ import android.support.v7.widget.Toolbar;
 import de.smartdev.application_nosensitivity.R;
 
 public class RegisterBusiness extends AppCompatActivity {
-
+    //check spelling
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);

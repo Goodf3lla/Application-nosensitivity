@@ -14,7 +14,8 @@
             android:layout_height="wrap_content"
             android:layout_alignParentTop="true"
             android:layout_centerHorizontal="true"
-            android:text="Anzeigenerstellung:"
+            android:padding="15dp"
+            android:text="Anzeigenerstellung"
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
@@ -25,7 +26,7 @@
             android:layout_below="@+id/textView_überschrift"
             android:layout_marginTop="40dp"
             android:padding="10dp"
-            android:text="1. Texteingabe"
+            android:text="1. Texteingabe:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
@@ -37,6 +38,8 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView_Texteingabe"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_marginTop="0dp"
             android:background="@drawable/outline_box_black"
             android:hint="Anzeigentext hier eingeben."
@@ -49,7 +52,7 @@
             android:layout_below="@+id/edit_Anzeigentext"
             android:layout_marginTop="30dp"
             android:padding="10dp"
-            android:text="2. Adresseingabe"
+            android:text="2. Adresseingabe:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
@@ -61,6 +64,8 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/textView_Adresseingabe"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
             android:layout_marginTop="0dp"
             android:background="@drawable/outline_box_black"
             android:hint="Adresse hier eingeben."
@@ -73,7 +78,7 @@
             android:layout_below="@+id/editText_Adresseingabe"
             android:layout_marginTop="30dp"
             android:padding="10dp"
-            android:text="3. Tags"
+            android:text="3. Tags:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <RelativeLayout
@@ -83,7 +88,6 @@
             android:layout_alignParentLeft="true"
             android:layout_alignParentStart="true"
             android:layout_below="@+id/tag_topic"
-            android:layout_marginBottom="50dp"
             android:padding="5dp">
 
             <TextView
@@ -135,7 +139,7 @@
                 android:layout_marginRight="10dp"
                 android:layout_toLeftOf="@+id/wählen"
                 android:background="@drawable/outline_box_black"
-                android:listSelector="#195c11" />
+                android:listSelector="#1AFF1A" />
 
             <ListView
                 android:id="@+id/ausgewaehlte_tag_liste"
@@ -146,17 +150,41 @@
                 android:layout_toEndOf="@+id/wählen"
                 android:layout_toRightOf="@+id/wählen"
                 android:background="@drawable/outline_box_black"
-                android:listSelector="#195c11" />
+                android:listSelector="#1AFF1A" />
         </RelativeLayout>
+
+        <TextView
+            android:id="@+id/timetolive_sektion"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/tag_sektion"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="4. Angebotsdauer:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <SeekBar
+            android:id="@+id/timetolive_bar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/timetolive_sektion"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/outline_box_black"
+            android:padding="5dp" />
+
 
         <Button
             android:id="@+id/Anzeige_abschicken"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentBottom="true"
-            android:layout_below="@+id/tag_sektion"
+            android:layout_below="@+id/timetolive_bar"
             android:layout_centerHorizontal="true"
-            android:layout_marginTop="5dp"
+            android:layout_marginTop="30dp"
             android:gravity="bottom"
             android:text="abschicken" />
 

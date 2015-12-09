@@ -33,8 +33,8 @@ public class SecondFragment extends Fragment {
     String Anzeigenadresse;
     ArrayList<String> alleTags = new ArrayList();
     ArrayList<String> gewaehlteTags = new ArrayList();
-    String auswahlRemove = "";              //to avoid NullpointerException
-    String auswahlAdd = "";
+    String auswahlRemove;
+    String auswahlAdd;
     private OnFragmentInteractionListener mListener;
 
 
