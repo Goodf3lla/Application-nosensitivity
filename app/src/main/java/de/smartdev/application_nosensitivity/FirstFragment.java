@@ -2,6 +2,8 @@ package de.smartdev.application_nosensitivity;
 
 import android.app.Activity;
 import android.content.Intent;
+import android.database.Cursor;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.os.Handler;
@@ -10,12 +12,15 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
+
+import de.smartdev.application_nosensitivity.backend.AnzeigeEntry;
+import de.smartdev.application_nosensitivity.backend.AnzeigenDbHelper;
+import de.smartdev.application_nosensitivity.backend.ListDataAdapter;
 
 
 public class FirstFragment extends Fragment {
@@ -49,14 +54,33 @@ public class FirstFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first, container, false);
         alleTags.add("Vegetarier");
         alleTags.add("Halal");
         alleTags.add("Test Clickable");
         alleTags.add("Test Scrollable");
-        final ArrayAdapter<String> adapter_show = new ArrayAdapter<>(getActivity(), R.layout.show_anzeige_design, R.id.row_anzeige_text, alleTags); //--> not clickable, why android.R.layout.simple_list_item_1, alleTags);
-        final ListView listView_show = (ListView) view.findViewById(R.id.listView_anzeigenShow);
+        AnzeigenDbHelper helper;
+        SQLiteDatabase db;
+        Cursor cursor;
+        ListView listView_show = (ListView) view.findViewById(R.id.listView_anzeigenShow);
+        ListDataAdapter adapter_show = new ListDataAdapter(getActivity(), R.layout.show_anzeige_design);
+        listView_show.setAdapter(adapter_show);
+        helper = new AnzeigenDbHelper(getActivity());
+        db = helper.getReadableDatabase();
+        cursor = helper.getAnzeigenInfo(db);
+        if (cursor.moveToFirst()) {
+            do {
+                String id, text, tags, adresse, lifetime, userId;
+                id = cursor.getString(0);
+                text = cursor.getString(1);
+                tags = cursor.getString(2);
+                adresse = cursor.getString(3);
+                lifetime = cursor.getString(4);
+                userId = cursor.getString(5);
+                AnzeigeEntry entry = new AnzeigeEntry(id, text, tags, adresse, lifetime, userId);
+                adapter_show.add(entry);
+            } while (cursor.moveToNext());
+        }
         listView_show.setAdapter(adapter_show);
         final Button button_show_Anzeige = (Button) view.findViewById(R.id.button_getAnzeige);
         button_show_Anzeige.setOnClickListener(new View.OnClickListener() {

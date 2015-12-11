@@ -145,6 +145,7 @@ public class SecondFragment extends Fragment {
                 mEdit_anzeigentext.getText().clear();
                 mEdit_anzeigenadresse.getText().clear();
                 //TODO: an DB & Server übergeben-->übergabeAnServer(gewaehlteTags);
+                //gewählte Tags
                 alleTags.addAll(gewaehlteTags);
                 Collections.sort(alleTags);
                 gewaehlteTags.clear();
