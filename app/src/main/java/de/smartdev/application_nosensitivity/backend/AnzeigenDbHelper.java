@@ -14,7 +14,7 @@ public class AnzeigenDbHelper extends SQLiteOpenHelper {
 
 
     private static final String DATABASE_NAME = "anzeigen.db";
-    private static final int DATABASE_VERSION = 1;
+    private static final int DATABASE_VERSION = 1; //to reset db change value
 
     private static final String CREATE_ANZEIGE_QUERY =
             "CREATE TABLE " + Anzeigen.AnzeigeInfo.TABLE_NAME + "("

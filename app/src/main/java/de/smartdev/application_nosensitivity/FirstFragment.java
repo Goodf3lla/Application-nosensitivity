@@ -59,15 +59,12 @@ public class FirstFragment extends Fragment {
         alleTags.add("Halal");
         alleTags.add("Test Clickable");
         alleTags.add("Test Scrollable");
-        AnzeigenDbHelper helper;
-        SQLiteDatabase db;
-        Cursor cursor;
         ListView listView_show = (ListView) view.findViewById(R.id.listView_anzeigenShow);
         ListDataAdapter adapter_show = new ListDataAdapter(getActivity(), R.layout.show_anzeige_design);
         listView_show.setAdapter(adapter_show);
-        helper = new AnzeigenDbHelper(getActivity());
-        db = helper.getReadableDatabase();
-        cursor = helper.getAnzeigenInfo(db);
+        AnzeigenDbHelper helper = new AnzeigenDbHelper(getActivity());
+        SQLiteDatabase db = helper.getReadableDatabase();
+        Cursor cursor = helper.getAnzeigenInfo(db);
         if (cursor.moveToFirst()) {
             do {
                 String id, text, tags, adresse, lifetime, userId;

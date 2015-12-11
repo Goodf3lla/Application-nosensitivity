@@ -1,6 +1,7 @@
 package de.smartdev.application_nosensitivity;
 
 import android.app.Activity;
+import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
@@ -16,6 +17,8 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 import java.util.Collections;
+
+import de.smartdev.application_nosensitivity.backend.AnzeigenDbHelper;
 
 
 /**
@@ -63,7 +66,9 @@ public class SecondFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         final View view = inflater.inflate(R.layout.fragment_second, container, false);
-
+        final AnzeigenDbHelper dbHelper = new AnzeigenDbHelper(getActivity());
+        AnzeigenDbHelper helper = new AnzeigenDbHelper(getActivity());
+        final SQLiteDatabase db = helper.getReadableDatabase();
         //TODO:make upgradeable with internet
         alleTags.add("Vegetarier");
         alleTags.add("Halal");
@@ -145,7 +150,7 @@ public class SecondFragment extends Fragment {
                 mEdit_anzeigentext.getText().clear();
                 mEdit_anzeigenadresse.getText().clear();
                 //TODO: an DB & Server übergeben-->übergabeAnServer(gewaehlteTags);
-                //gewählte Tags
+                dbHelper.addAnzeige("id", Anzeigentext, gewaehlteTags.toString(), Anzeigenadresse, "lifetime", "anzUserID", db);
                 alleTags.addAll(gewaehlteTags);
                 Collections.sort(alleTags);
                 gewaehlteTags.clear();
