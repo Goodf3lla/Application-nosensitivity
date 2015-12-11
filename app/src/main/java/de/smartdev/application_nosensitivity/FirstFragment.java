@@ -17,8 +17,6 @@ import android.widget.Toast;
 
 import java.util.ArrayList;
 
-import de.smartdev.application_nosensitivity.backend.AnzeigeEntry;
-
 
 public class FirstFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "sectionNumber"; //changed from default to fit to int position
@@ -38,13 +36,6 @@ public class FirstFragment extends Fragment {
         fragment.setArguments(args);
         return fragment;
     }
-
-    private static AnzeigeEntry mockAnzeige() {
-        String string = "test";
-        AnzeigeEntry anzeige = new AnzeigeEntry(string, string, string, string, string, string);
-        return anzeige;
-    }
-
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,7 +55,7 @@ public class FirstFragment extends Fragment {
         alleTags.add("Halal");
         alleTags.add("Test Clickable");
         alleTags.add("Test Scrollable");
-        final ArrayAdapter<String> adapter_show = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, alleTags); //R.layout.btn_show_detail_testing, R.id.info_item, alleTags); --> not clickable, why
+        final ArrayAdapter<String> adapter_show = new ArrayAdapter<>(getActivity(), R.layout.show_anzeige_design, R.id.row_anzeige_text, alleTags); //--> not clickable, why android.R.layout.simple_list_item_1, alleTags);
         final ListView listView_show = (ListView) view.findViewById(R.id.listView_anzeigenShow);
         listView_show.setAdapter(adapter_show);
         final Button button_show_Anzeige = (Button) view.findViewById(R.id.button_getAnzeige);
