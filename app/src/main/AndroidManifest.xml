@@ -80,11 +80,20 @@
         <activity
             android:name=".login.RegisterBusiness"
             android:label="@string/title_activity_registerbusiness"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
         <activity
             android:name=".backend.DataListActivity"
             android:label="@string/title_activity_data_list"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".DetailActivity"
+            android:label="@string/title_activity_detail"
+            android:parentActivityName=".MainActivity"
+            android:theme="@style/AppTheme.NoActionBar">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="de.smartdev.application_nosensitivity.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

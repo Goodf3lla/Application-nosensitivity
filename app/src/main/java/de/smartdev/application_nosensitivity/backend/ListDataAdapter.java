@@ -27,7 +27,7 @@ public class ListDataAdapter extends ArrayAdapter {
 
     @Override
     public void add(Object object) {
-        super.add(object);
+        super.add(object);                  //TODO: check warnings !!!!
         list.add(object);
     }
     @Override
@@ -51,7 +51,7 @@ public class ListDataAdapter extends ArrayAdapter {
             Log.e("DATABASE OPERATION", "no rows");
 
             LayoutInflater inflater = (LayoutInflater) this.getContext().getSystemService(Context.LAYOUT_INFLATER_SERVICE);
-            row = inflater.inflate(R.layout.row_layout_anzeige, parent, false);
+            row = inflater.inflate(R.layout.show_anzeige_design, parent, false);
             layoutHandler = new LayoutHandler();
             layoutHandler.ID = (TextView) row.findViewById(R.id.row_anzeige_id);
             layoutHandler.TEXT = (TextView) row.findViewById(R.id.row_anzeige_text);

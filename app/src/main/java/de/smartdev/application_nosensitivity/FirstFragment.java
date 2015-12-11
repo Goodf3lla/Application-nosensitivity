@@ -1,16 +1,28 @@
 package de.smartdev.application_nosensitivity;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
+import android.os.Handler;
 import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.AdapterView;
+import android.widget.ArrayAdapter;
+import android.widget.Button;
+import android.widget.ListView;
+import android.widget.Toast;
+
+import java.util.ArrayList;
+
+import de.smartdev.application_nosensitivity.backend.AnzeigeEntry;
 
 
 public class FirstFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "sectionNumber"; //changed from default to fit to int position
+    public ArrayList<String> alleTags = new ArrayList();
     private int mParam1;
     private OnFragmentInteractionListener mListener;
 
@@ -25,6 +37,12 @@ public class FirstFragment extends Fragment {
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
         return fragment;
+    }
+
+    private static AnzeigeEntry mockAnzeige() {
+        String string = "test";
+        AnzeigeEntry anzeige = new AnzeigeEntry(string, string, string, string, string, string);
+        return anzeige;
     }
 
     @Override
@@ -42,6 +60,35 @@ public class FirstFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_first, container, false);
+        alleTags.add("Vegetarier");
+        alleTags.add("Halal");
+        alleTags.add("Test Clickable");
+        alleTags.add("Test Scrollable");
+        final ArrayAdapter<String> adapter_show = new ArrayAdapter<>(getActivity(), android.R.layout.simple_list_item_1, alleTags); //R.layout.btn_show_detail_testing, R.id.info_item, alleTags); --> not clickable, why
+        final ListView listView_show = (ListView) view.findViewById(R.id.listView_anzeigenShow);
+        listView_show.setAdapter(adapter_show);
+        final Button button_show_Anzeige = (Button) view.findViewById(R.id.button_getAnzeige);
+        button_show_Anzeige.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Toast toast = Toast.makeText(getActivity(), "blubb", Toast.LENGTH_LONG);
+                toast.show();
+            }
+        });
+        listView_show.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View view, final int position, long id) {
+                final Intent intent = new Intent(getActivity(), DetailActivity.class);
+                intent.putExtra("position", position);
+                new Handler().post(new Runnable() {                                                 //TODO: pass sign in token to detail & back to main
+                    @Override
+                    public void run() {
+                        startActivity(intent);
+                        getActivity().finish();
+                    }
+                });
+            }
+        });
         return view;
     }
 

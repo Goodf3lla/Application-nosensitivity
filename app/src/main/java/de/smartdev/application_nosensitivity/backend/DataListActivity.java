@@ -3,11 +3,7 @@ package de.smartdev.application_nosensitivity.backend;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.ListView;
 
 import de.smartdev.application_nosensitivity.R;
@@ -29,7 +25,7 @@ public class DataListActivity extends AppCompatActivity {
         setContentView(R.layout.activity_data_list);
 
         list = (ListView) findViewById(R.id.listView_anzeigenList);
-        listDataAdapter = new ListDataAdapter(getApplicationContext(), R.layout.row_layout_anzeige);
+        listDataAdapter = new ListDataAdapter(getApplicationContext(), R.layout.show_anzeige_design);
         list.setAdapter(listDataAdapter);
 
         helper = new AnzeigenDbHelper(getApplicationContext());
