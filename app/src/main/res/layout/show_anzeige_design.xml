@@ -2,34 +2,21 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-
     android:layout_height="150dp"
     android:background="@drawable/outline_black_inside_green"
+    android:descendantFocusability="blocksDescendants"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
     app:layout_behavior="@string/appbar_scrolling_view_behavior">
 
-
     <ImageView
         android:id="@+id/first_logo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_anzeige_details"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:src="@drawable/first_logo" />
-
-
-    <Button
-        android:id="@+id/button_anzeige_details"
-        style="?android:attr/buttonStyleSmall"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignParentRight="true"
-        android:text="Details" />
 
     <TextView
         android:id="@+id/row_anzeige_id"
@@ -37,41 +24,35 @@
         android:layout_height="wrap_content"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:layout_alignParentTop="true"
+        android:layout_below="@+id/first_logo"
         android:text="New Text" />
 
     <TextView
         android:id="@+id/row_anzeige_userId"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignBaseline="@+id/button_anzeige_details"
-        android:layout_alignBottom="@+id/button_anzeige_details"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
+        android:layout_below="@+id/row_anzeige_id"
         android:text="New Text" />
 
     <TextView
         android:id="@+id/row_anzeige_adresse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_alignEnd="@+id/button_anzeige_details"
-        android:layout_alignParentTop="true"
-        android:layout_alignRight="@+id/button_anzeige_details"
-        android:layout_marginLeft="35dp"
-        android:layout_marginStart="35dp"
-        android:layout_toRightOf="@+id/row_anzeige_id"
+        android:layout_below="@+id/row_anzeige_userId"
+        android:layout_marginLeft="113dp"
+        android:layout_marginStart="113dp"
+        android:layout_toEndOf="@+id/row_anzeige_userId"
+        android:layout_toRightOf="@+id/row_anzeige_userId"
         android:text="New Text" />
 
     <TextView
         android:id="@+id/row_anzeige_text"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/row_anzeige_userId"
-        android:layout_alignLeft="@+id/row_anzeige_adresse"
-        android:layout_alignStart="@+id/row_anzeige_adresse"
         android:layout_alignTop="@+id/first_logo"
-        android:layout_toLeftOf="@+id/button_anzeige_details"
-        android:layout_toStartOf="@+id/button_anzeige_details"
+        android:layout_centerHorizontal="true"
         android:text="Medium Text"
         android:textAppearance="?android:attr/textAppearanceMedium" />
 
@@ -90,9 +71,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignLeft="@+id/row_anzeige_text"
+        android:layout_alignParentBottom="true"
         android:layout_alignStart="@+id/row_anzeige_text"
-        android:layout_below="@+id/row_anzeige_text"
         android:text="New Text" />
-
-
 </RelativeLayout>

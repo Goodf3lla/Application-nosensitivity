@@ -169,6 +169,7 @@ public class MainActivity extends AppCompatActivity
         //automatic declaration
     }
 
+
     /**
      * A placeholder fragment containing a simple view.
      */
