@@ -8,18 +8,9 @@
         android:id="@+id/listView_anzeigenShow_test"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_above="@+id/button_getAnzeige_test"
+        android:layout_alignParentBottom="true"
         android:layout_alignParentTop="true"
         android:background="@drawable/outline_box_black"
         android:listSelector="#FFFFFF"
         android:padding="5dp" />
-
-    <Button
-        android:id="@+id/button_getAnzeige_test"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignParentBottom="true"
-        android:layout_centerHorizontal="true"
-        android:text="Erneuern" />
-
 </RelativeLayout>

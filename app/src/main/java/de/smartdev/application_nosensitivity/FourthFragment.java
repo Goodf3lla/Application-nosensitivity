@@ -10,7 +10,6 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 
 import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
@@ -70,7 +69,21 @@ public class FourthFragment extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_fourth, container, false);
         final Firebase firebase = new Firebase("https://lob.firebaseio.com/");
-        Button test_button = (Button) view.findViewById(R.id.button_getAnzeige_test);
+        firebase.limitToLast(10).addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot dataSnapshot) {
+                for (DataSnapshot anzSnapshot : dataSnapshot.getChildren()) {
+                    AnzeigeEntry anzeigeEntry = anzSnapshot.getValue(AnzeigeEntry.class);
+                    Log.i("FirebaseUI/4", "Successful read " + anzeigeEntry.getAnzeigenText());
+                }
+            }
+
+            @Override
+            public void onCancelled(FirebaseError firebaseError) {
+                Log.w("FirebaseUI/4", "The read failed: " + firebaseError.getMessage());
+            }
+        });
+        /*Button test_button = (Button) view.findViewById(R.id.button_getAnzeige_test);
         test_button.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -89,8 +102,8 @@ public class FourthFragment extends Fragment {
                     }
                 });
             }
-        });
-    /*    ListView messagesView=(ListView) view.findViewById(R.id.listView_anzeigenShow_test);
+        });*/
+    /*  ListView messagesView=(ListView) view.findViewById(R.id.listView_anzeigenShow_test);
         mAdapter =new FirebaseListAdapter<AnzeigeEntry>(getActivity(), AnzeigeEntry.class, R.layout.show_anzeige_design, firebase) {
             @Override
             protected void populateView(View view, AnzeigeEntry anzeigeEntry) {
@@ -103,7 +116,6 @@ public class FourthFragment extends Fragment {
             }
         };
         messagesView.setAdapter(mAdapter);*/
-
 
         RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.listView_anzeigenShow_test);
         recyclerView.setHasFixedSize(true);
