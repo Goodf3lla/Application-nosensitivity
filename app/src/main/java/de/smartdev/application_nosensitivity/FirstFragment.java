@@ -16,8 +16,6 @@ import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
-import java.util.ArrayList;
-
 import de.smartdev.application_nosensitivity.backend.AnzeigeEntry;
 import de.smartdev.application_nosensitivity.backend.AnzeigenDbHelper;
 import de.smartdev.application_nosensitivity.backend.ListDataAdapter;
@@ -25,7 +23,6 @@ import de.smartdev.application_nosensitivity.backend.ListDataAdapter;
 
 public class FirstFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "sectionNumber"; //changed from default to fit to int position
-    public ArrayList<String> alleTags = new ArrayList();
     private int mParam1;
     private OnFragmentInteractionListener mListener;
 
@@ -54,11 +51,7 @@ public class FirstFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        View view = inflater.inflate(R.layout.fragment_first, container, false);
-        alleTags.add("Vegetarier");
-        alleTags.add("Halal");
-        alleTags.add("Test Clickable");
-        alleTags.add("Test Scrollable");
+        final View view = inflater.inflate(R.layout.fragment_first, container, false);
         ListView listView_show = (ListView) view.findViewById(R.id.listView_anzeigenShow);
         ListDataAdapter adapter_show = new ListDataAdapter(getActivity(), R.layout.show_anzeige_design);
         listView_show.setAdapter(adapter_show);

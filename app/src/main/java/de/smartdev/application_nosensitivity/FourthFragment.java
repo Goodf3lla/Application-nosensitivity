@@ -4,9 +4,18 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+
+import com.firebase.client.DataSnapshot;
+import com.firebase.client.Firebase;
+import com.firebase.client.FirebaseError;
+import com.firebase.client.ValueEventListener;
+
+import de.smartdev.application_nosensitivity.backend.AnzeigeEntry;
 
 
 /**
@@ -54,8 +63,31 @@ public class FourthFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_fourth, container, false);
+        View view = inflater.inflate(R.layout.fragment_fourth, container, false);
+        final Firebase firebase = new Firebase("https://lob.firebaseio.com/");
+        Button test_button = (Button) view.findViewById(R.id.button_getAnzeige_test);
+        test_button.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                firebase.limitToLast(10).addValueEventListener(new ValueEventListener() {
+                    @Override
+                    public void onDataChange(DataSnapshot dataSnapshot) {
+                        for (DataSnapshot anzSnapshot : dataSnapshot.getChildren()) {
+                            AnzeigeEntry anzeigeEntry = anzSnapshot.getValue(AnzeigeEntry.class);
+                            Log.i("FirebaseUI/4", "Successful read " + anzeigeEntry.getAnzeigenText());
+                        }
+                    }
+
+                    @Override
+                    public void onCancelled(FirebaseError firebaseError) {
+                        Log.w("FirebaseUI/4", "The read failed: " + firebaseError.getMessage());
+                    }
+                });
+            }
+        });
+
+
+        return view;
     }
 
     // TODO: Rename method, update argument and hook method into UI event

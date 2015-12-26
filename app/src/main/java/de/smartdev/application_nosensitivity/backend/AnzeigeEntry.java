@@ -13,6 +13,11 @@ public class AnzeigeEntry {
     private String userAnzeigeId;
 
 
+    public AnzeigeEntry() {
+        //needed for firebaseUI, before changing check documentation https://github.com/firebase/firebaseui-android
+    }
+
+
     public AnzeigeEntry(String id, String anzeigenText, String tags, String adresse, String lifetime, String userAnzeigeId) {
         this.id = id;
         this.anzeigenText = anzeigenText;

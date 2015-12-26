@@ -17,6 +17,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Toast;
 
+import com.firebase.client.Firebase;
+
 import de.smartdev.application_nosensitivity.login.LoginActivity;
 
 public class MainActivity extends AppCompatActivity
@@ -50,6 +52,7 @@ public class MainActivity extends AppCompatActivity
         is_signed_in = intent.getBooleanExtra("is_signed_in", false);
         Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
         toast.show();
+        Firebase.setAndroidContext(this);
     }
 
     @Override
