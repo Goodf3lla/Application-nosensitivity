@@ -31,9 +31,9 @@ TODO: Analytics: https://developers.google.com/analytics/devguides/collection/an
 
 TODO: Location: http://developer.android.com/guide/topics/location/strategies.html
 
-TODO: Google Cloud Messaging
-
 TODO: best practice for settings http://viralpatel.net/blogs/android-preferences-activity-example/
+
+TODO: check lifecycle of fragments
 
 DONE: Zurückbutton abfangen best practice http://www.askingbox.de/frage/android-zurueck-button-abfangen
 

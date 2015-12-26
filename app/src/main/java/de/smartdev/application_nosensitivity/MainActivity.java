@@ -53,6 +53,7 @@ public class MainActivity extends AppCompatActivity
         Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
         toast.show();
         Firebase.setAndroidContext(this);
+        Firebase ref_firebase_main = new Firebase("https://github.com/firebase/firebaseui-android");
     }
 
     @Override
@@ -133,9 +134,15 @@ public class MainActivity extends AppCompatActivity
 
     public void restoreActionBar() {
         ActionBar actionBar = getSupportActionBar();
-        actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
-        actionBar.setDisplayShowTitleEnabled(true);
-        actionBar.setTitle(mTitle);
+        if (actionBar != null) {
+            actionBar.setNavigationMode(ActionBar.NAVIGATION_MODE_STANDARD);
+        }
+        if (actionBar != null) {
+            actionBar.setDisplayShowTitleEnabled(true);
+        }
+        if (actionBar != null) {
+            actionBar.setTitle(mTitle);
+        }
     }
 
 

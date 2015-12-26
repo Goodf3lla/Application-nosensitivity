@@ -4,6 +4,8 @@ import android.app.Activity;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -14,8 +16,10 @@ import com.firebase.client.DataSnapshot;
 import com.firebase.client.Firebase;
 import com.firebase.client.FirebaseError;
 import com.firebase.client.ValueEventListener;
+import com.firebase.ui.FirebaseRecyclerAdapter;
 
 import de.smartdev.application_nosensitivity.backend.AnzeigeEntry;
+import de.smartdev.application_nosensitivity.backend.AnzeigeEntryViewHolder;
 
 
 /**
@@ -29,9 +33,10 @@ import de.smartdev.application_nosensitivity.backend.AnzeigeEntry;
 public class FourthFragment extends Fragment {
 
     private static final String ARG_SECTION_NUMBER = "sectionNumber";
+    //FirebaseListAdapter<AnzeigeEntry> mAdapter;
+    FirebaseRecyclerAdapter<AnzeigeEntry, AnzeigeEntryViewHolder> mAdapter;
     private int mParam1;
     private OnFragmentInteractionListener mListener;
-
     public FourthFragment() {
         // Required empty public constructor
     }
@@ -85,8 +90,36 @@ public class FourthFragment extends Fragment {
                 });
             }
         });
+    /*    ListView messagesView=(ListView) view.findViewById(R.id.listView_anzeigenShow_test);
+        mAdapter =new FirebaseListAdapter<AnzeigeEntry>(getActivity(), AnzeigeEntry.class, R.layout.show_anzeige_design, firebase) {
+            @Override
+            protected void populateView(View view, AnzeigeEntry anzeigeEntry) {
+                ((TextView)view.findViewById(R.id.row_anzeige_text)).setText(anzeigeEntry.getAnzeigenText());
+                ((TextView)view.findViewById(R.id.row_anzeige_adresse)).setText(anzeigeEntry.getAdresse());
+                ((TextView)view.findViewById(R.id.row_anzeige_tags)).setText(anzeigeEntry.getTags());
+                ((TextView)view.findViewById(R.id.row_anzeige_id)).setText(anzeigeEntry.getId());
+                ((TextView)view.findViewById(R.id.row_anzeige_userId)).setText(anzeigeEntry.getUserAnzeigeId());
+                ((TextView)view.findViewById(R.id.row_anzeige_lifetime)).setText(anzeigeEntry.getLifetime());
+            }
+        };
+        messagesView.setAdapter(mAdapter);*/
 
 
+        RecyclerView recyclerView = (RecyclerView) view.findViewById(R.id.listView_anzeigenShow_test);
+        recyclerView.setHasFixedSize(true);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getActivity()));
+        mAdapter = new FirebaseRecyclerAdapter<AnzeigeEntry, AnzeigeEntryViewHolder>(AnzeigeEntry.class, R.layout.card_view_anzeige, AnzeigeEntryViewHolder.class, firebase) {
+            @Override
+            public void populateViewHolder(AnzeigeEntryViewHolder entryViewHolder, AnzeigeEntry anzeigeEntry) {
+                entryViewHolder.anzeigenText.setText(anzeigeEntry.getAnzeigenText());
+                entryViewHolder.anzeigenAdresse.setText(anzeigeEntry.getAdresse());
+                entryViewHolder.anzeigenTags.setText(anzeigeEntry.getTags());
+                entryViewHolder.anzeigeID.setText(anzeigeEntry.getId());
+                entryViewHolder.anzeigeUserID.setText(anzeigeEntry.getUserAnzeigeId());
+                entryViewHolder.anzeigeLifeTime.setText(anzeigeEntry.getLifetime());
+            }
+        };
+        recyclerView.setAdapter(mAdapter);
         return view;
     }
 
@@ -112,6 +145,12 @@ public class FourthFragment extends Fragment {
     public void onDetach() {
         super.onDetach();
         mListener = null;
+    }
+
+    @Override
+    public void onDestroy() {
+        super.onDestroy();
+        mAdapter.cleanup();
     }
 
     /**

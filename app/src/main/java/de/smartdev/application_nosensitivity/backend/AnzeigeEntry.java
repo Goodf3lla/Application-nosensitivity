@@ -12,7 +12,7 @@ public class AnzeigeEntry {
     private String lifetime;
     private String userAnzeigeId;
 
-
+    @SuppressWarnings("unused")
     public AnzeigeEntry() {
         //needed for firebaseUI, before changing check documentation https://github.com/firebase/firebaseui-android
     }
