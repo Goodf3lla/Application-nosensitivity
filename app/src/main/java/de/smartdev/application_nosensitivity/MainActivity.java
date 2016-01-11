@@ -39,8 +39,7 @@ public class MainActivity extends AppCompatActivity
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        mNavigationDrawerFragment = (NavigationDrawerFragment)
-                getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
+        mNavigationDrawerFragment = (NavigationDrawerFragment) getSupportFragmentManager().findFragmentById(R.id.navigation_drawer);
         mTitle = getTitle();
 
         // Set up the drawer.
@@ -53,7 +52,6 @@ public class MainActivity extends AppCompatActivity
         Toast toast = Toast.makeText(this, message, Toast.LENGTH_LONG);
         toast.show();
         Firebase.setAndroidContext(this);
-        Firebase ref_firebase_main = new Firebase("https://github.com/firebase/firebaseui-android");
     }
 
     @Override
@@ -100,9 +98,7 @@ public class MainActivity extends AppCompatActivity
         }
 
         FragmentManager fragmentManager = getSupportFragmentManager();
-        fragmentManager.beginTransaction()
-                .replace(R.id.container, fragment)
-                .commit();
+        fragmentManager.beginTransaction().replace(R.id.container, fragment).commit();
     }
 
     public void gotoLoginActivity(View view) {
