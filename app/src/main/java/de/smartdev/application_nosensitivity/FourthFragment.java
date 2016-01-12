@@ -129,6 +129,8 @@ public class FourthFragment extends Fragment {
                 entryViewHolder.anzeigeID.setText(anzeigeEntry.getId());
                 entryViewHolder.anzeigeUserID.setText(anzeigeEntry.getUserAnzeigeId());
                 entryViewHolder.anzeigeLifeTime.setText(anzeigeEntry.getLifetime());
+                //TODO: update
+                //entryViewHolder.anzeigeRestaurantName.setText(anzeigenEntry.getRestaurantName());
             }
         };
         recyclerView.setAdapter(mAdapter);

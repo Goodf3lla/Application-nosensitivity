@@ -5,6 +5,8 @@ package de.smartdev.application_nosensitivity.backend;
  */
 public class AnzeigeEntry {
 
+
+    private String restaurantName;
     private String id;
     private String anzeigenText;
     private String tags;
@@ -18,7 +20,8 @@ public class AnzeigeEntry {
     }
 
 
-    public AnzeigeEntry(String id, String anzeigenText, String tags, String adresse, String lifetime, String userAnzeigeId) {
+    public AnzeigeEntry(String restaurantName, String id, String anzeigenText, String tags, String adresse, String lifetime, String userAnzeigeId) {
+        this.restaurantName = restaurantName;
         this.id = id;
         this.anzeigenText = anzeigenText;
         this.tags = tags;
@@ -26,6 +29,14 @@ public class AnzeigeEntry {
         this.lifetime = lifetime;
         this.userAnzeigeId = userAnzeigeId;
 
+    }
+
+    public String getRestaurantName() {
+        return restaurantName;
+    }
+
+    public void setRestaurantName(String restaurantName) {
+        this.restaurantName = restaurantName;
     }
 
     public String getAnzeigenText() {

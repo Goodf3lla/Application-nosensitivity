@@ -19,14 +19,41 @@
             android:textAppearance="?android:attr/textAppearanceLarge" />
 
         <TextView
-            android:id="@+id/textView_Texteingabe"
+            android:id="@+id/textView_RestaurantName"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_alignParentLeft="true"
             android:layout_below="@+id/textView_überschrift"
-            android:layout_marginTop="40dp"
+            android:layount_marginTop="40dp"
             android:padding="10dp"
-            android:text="1. Texteingabe:"
+            android:text="1. Restaurantname"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/edit_RestaurantName"
+            android:layout_width="wrap_content"
+            android:layout_height="30dp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentStart="true"
+            android:layout_below="@+id/textView_RestaurantName"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:layout_marginTop="0dp"
+            android:background="@drawable/outline_box_black"
+            android:hint="Restaurantname hier eingeben."
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/textView_Texteingabe"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/edit_RestaurantName"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="2. Texteingabe:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
@@ -52,7 +79,7 @@
             android:layout_below="@+id/edit_Anzeigentext"
             android:layout_marginTop="30dp"
             android:padding="10dp"
-            android:text="2. Adresseingabe:"
+            android:text="3. Adresseingabe:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <EditText
@@ -78,7 +105,7 @@
             android:layout_below="@+id/editText_Adresseingabe"
             android:layout_marginTop="30dp"
             android:padding="10dp"
-            android:text="3. Tags:"
+            android:text="4. Tags:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <RelativeLayout
@@ -160,7 +187,7 @@
             android:layout_below="@+id/tag_sektion"
             android:layout_marginTop="30dp"
             android:padding="10dp"
-            android:text="4. Angebotsdauer:"
+            android:text="5. Angebotsdauer:"
             android:textAppearance="?android:attr/textAppearanceMedium" />
 
         <SeekBar

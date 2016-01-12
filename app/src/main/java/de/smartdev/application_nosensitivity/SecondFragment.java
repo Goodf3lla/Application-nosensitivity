@@ -35,8 +35,9 @@ import de.smartdev.application_nosensitivity.backend.AnzeigenDbHelper;
 public class SecondFragment extends Fragment {
     private static final String ARG_SECTION_NUMBER = "sectionNumber";
     public int mParam1;
-    String Anzeigentext;
-    String Anzeigenadresse;
+    String restaurantName;
+    String anzeigentext;
+    String anzeigenadresse;
     ArrayList<String> alleTags = new ArrayList();
     ArrayList<String> gewaehlteTags = new ArrayList();
     String auswahlRemove;
@@ -145,16 +146,19 @@ public class SecondFragment extends Fragment {
         Button button_abschicken = (Button) view.findViewById(R.id.Anzeige_abschicken);
         button_abschicken.setOnClickListener(new View.OnClickListener() {
             public void onClick(View v) {
+                //Aulesen des Restaurantnamens
+                EditText mEdit_restaurantName = (EditText) view.findViewById(R.id.edit_RestaurantName);
+                restaurantName = mEdit_restaurantName.getText().toString();
                 //Auslesen des Anzeigentextes
                 EditText mEdit_anzeigentext = (EditText) view.findViewById(R.id.edit_Anzeigentext);
-                Anzeigentext = mEdit_anzeigentext.getText().toString();
+                anzeigentext = mEdit_anzeigentext.getText().toString();
                 //Auslesen der Adresse
                 EditText mEdit_anzeigenadresse = (EditText) view.findViewById(R.id.editText_Adresseingabe);
-                Anzeigenadresse = mEdit_anzeigenadresse.getText().toString();
+                anzeigenadresse = mEdit_anzeigenadresse.getText().toString();
                 mEdit_anzeigentext.getText().clear();
                 mEdit_anzeigenadresse.getText().clear();
                 //TODO: an DB & Server übergeben-->übergabeAnServer(gewaehlteTags);
-                AnzeigeEntry anzeigeEntry = new AnzeigeEntry("testid", Anzeigentext, gewaehlteTags.toString(), Anzeigenadresse, "90 min", "datahex");
+                AnzeigeEntry anzeigeEntry = new AnzeigeEntry(restaurantName, "testid", anzeigentext, gewaehlteTags.toString(), anzeigenadresse, "90 min", "datahex");
                 //dbHelper.addAnzeige("id", Anzeigentext, gewaehlteTags.toString(), Anzeigenadresse, "lifetime", "anzUserID", db);
                 firebase.push().setValue(anzeigeEntry);
                 alleTags.addAll(gewaehlteTags);
