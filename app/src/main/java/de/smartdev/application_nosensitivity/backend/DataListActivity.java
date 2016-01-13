@@ -42,8 +42,8 @@ public class DataListActivity extends AppCompatActivity {
                 adresse = cursor.getString(3);
                 lifetime = cursor.getString(4);
                 userId = cursor.getString(5);
-
-                AnzeigeEntry entry = new AnzeigeEntry(id, text, tags, adresse, lifetime, userId);
+                //TODO:update entry
+                AnzeigeEntry entry = new AnzeigeEntry("RestaurantName", id, text, tags, adresse, lifetime, userId);
                 listDataAdapter.add(entry);
 
             } while (cursor.moveToNext());

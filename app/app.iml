@@ -90,6 +90,7 @@
     <orderEntry type="library" exported="" name="guava-annotations-r03" level="project" />
     <orderEntry type="library" exported="" name="guava-primitives-r03" level="project" />
     <orderEntry type="library" exported="" name="cardview-v7-23.1.1" level="project" />
+    <orderEntry type="library" exported="" name="geofire-1.1.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-client-jvm-2.5.0" level="project" />
     <orderEntry type="library" exported="" name="firebase-client-android-2.5.0" level="project" />
     <orderEntry type="library" exported="" name="guava-base-r03" level="project" />

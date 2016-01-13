@@ -1,10 +1,12 @@
 package de.smartdev.application_nosensitivity;
 
 import android.app.Activity;
+import android.content.Context;
 import android.database.sqlite.SQLiteDatabase;
 import android.net.Uri;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.telephony.TelephonyManager;
 import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
@@ -38,6 +40,7 @@ public class SecondFragment extends Fragment {
     String restaurantName;
     String anzeigentext;
     String anzeigenadresse;
+    String anzeigenUserID;
     ArrayList<String> alleTags = new ArrayList();
     ArrayList<String> gewaehlteTags = new ArrayList();
     String auswahlRemove;
@@ -142,6 +145,8 @@ public class SecondFragment extends Fragment {
                 });
             }
         });
+        TelephonyManager telephonyManager = (TelephonyManager) getActivity().getSystemService(Context.TELEPHONY_SERVICE);
+        anzeigenUserID = telephonyManager.getDeviceId();
         final Firebase firebase = new Firebase("https://lob.firebaseio.com/");
         Button button_abschicken = (Button) view.findViewById(R.id.Anzeige_abschicken);
         button_abschicken.setOnClickListener(new View.OnClickListener() {
@@ -158,7 +163,7 @@ public class SecondFragment extends Fragment {
                 mEdit_anzeigentext.getText().clear();
                 mEdit_anzeigenadresse.getText().clear();
                 //TODO: an DB & Server übergeben-->übergabeAnServer(gewaehlteTags);
-                AnzeigeEntry anzeigeEntry = new AnzeigeEntry(restaurantName, "testid", anzeigentext, gewaehlteTags.toString(), anzeigenadresse, "90 min", "datahex");
+                AnzeigeEntry anzeigeEntry = new AnzeigeEntry(restaurantName, anzeigenUserID, anzeigentext, gewaehlteTags.toString(), anzeigenadresse, "90 min", "datahex");
                 //dbHelper.addAnzeige("id", Anzeigentext, gewaehlteTags.toString(), Anzeigenadresse, "lifetime", "anzUserID", db);
                 firebase.push().setValue(anzeigeEntry);
                 alleTags.addAll(gewaehlteTags);

@@ -11,6 +11,7 @@ import de.smartdev.application_nosensitivity.R;
  */
 public class AnzeigeEntryViewHolder extends RecyclerView.ViewHolder {
 
+    public TextView anzeigenRestaurantName;
     public TextView anzeigenText;
     public TextView anzeigenAdresse;
     public TextView anzeigenTags;
@@ -20,6 +21,7 @@ public class AnzeigeEntryViewHolder extends RecyclerView.ViewHolder {
 
     public AnzeigeEntryViewHolder(View view) {
         super(view);
+        anzeigenRestaurantName = (TextView) view.findViewById(R.id.row_anzeige_restaurantName);
         anzeigenText = (TextView) view.findViewById(R.id.row_anzeige_text);
         anzeigenAdresse = (TextView) view.findViewById(R.id.row_anzeige_adresse);
         anzeigenTags = (TextView) view.findViewById(R.id.row_anzeige_tags);

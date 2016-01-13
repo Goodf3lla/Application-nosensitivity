@@ -67,7 +67,8 @@ public class FirstFragment extends Fragment {
                 adresse = cursor.getString(3);
                 lifetime = cursor.getString(4);
                 userId = cursor.getString(5);
-                AnzeigeEntry entry = new AnzeigeEntry(id, text, tags, adresse, lifetime, userId);
+                //TODO: updateRestaurantName here @Lukas
+                AnzeigeEntry entry = new AnzeigeEntry("RestaurantName", id, text, tags, adresse, lifetime, userId);
                 adapter_show.add(entry);
             } while (cursor.moveToNext());
         }
