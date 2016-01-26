@@ -1,16 +1,129 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="de.smartdev.application_nosensitivity.ThirdFragment">
 
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
     <TextView
-        android:id="@+id/textView2"
+        android:id="@+id/textView_profil_topline"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
+        android:padding="15dp"
         android:text="Profil"
-        android:textAppearance="?android:attr/textAppearanceMedium" />
+        android:textAppearance="?android:attr/textAppearanceLarge" />
 
-</RelativeLayout>
+        <TextView
+            android:id="@+id/textView_profil_restaurantname"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_below="@+id/textView_profil_topline"
+            android:layout_marginTop="40dp"
+            android:padding="10dp"
+            android:text="1. Restaurantname:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/edit_profil_restaurantname"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/textView_profil_restaurantname"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/outline_box_black"
+            android:hint="Restaurantname hier eingeben."
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/textView_profil_adresse"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_profil_restaurantname"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="2. Adresse:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/edit_profil_adresse"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/textView_profil_adresse"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/outline_box_black"
+            android:hint="Adresse hier eingeben."
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/textView_profil_beschreibung"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_profil_adresse"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="3. Beschreibung:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/edit_profil_beschreibung"
+            android:layout_width="match_parent"
+            android:layout_height="60dp"
+            android:layout_below="@+id/textView_profil_beschreibung"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/outline_box_black"
+            android:hint="Geben sie eine kurze Beschreibung ihres Restaurants."
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/textView_profil_homepage"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_profil_beschreibung"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="4. Homepage:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:id="@+id/edit_profil_homepage"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/textView_profil_homepage"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/outline_box_black"
+            android:hint="z.B. www.google.de"
+            android:padding="5dp" />
+
+        <TextView
+            android:id="@+id/textView_profil_phoneNumber"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/edit_profil_homepage"
+            android:layout_marginTop="30dp"
+            android:padding="10dp"
+            android:text="5. Telefonnummer:"
+            android:textAppearance="?android:attr/textAppearanceMedium" />
+
+        <EditText
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:layout_below="@+id/textView_profil_phoneNumber"
+            android:layout_marginLeft="5dp"
+            android:layout_marginRight="5dp"
+            android:background="@drawable/outline_box_black"
+            android:ems="10"
+            android:hint="089123456"
+            android:inputType="phone"
+            android:padding="5dp" />
+
+
+    </RelativeLayout>
+</ScrollView>

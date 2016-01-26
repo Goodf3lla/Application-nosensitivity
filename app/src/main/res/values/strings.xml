@@ -22,6 +22,7 @@
 
     <string name="title_activity_settings">Settings</string>
 
+
     <!-- Strings related to Settings -->
 
     <!-- Example General settings -->
@@ -94,4 +95,5 @@
 
     <string name="title_activity_fullscreen1">FullscreenActivity1</string>
     <string name="title_activity_detail">DetailActivity</string>
+
 </resources>
